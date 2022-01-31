@@ -7,11 +7,18 @@
 
 This repository is to be used as a template when creating new web apps using [Next.js with TypeScript](https://github.com/vercel/next.js/blob/canary/docs/basic-features/typescript.md).
 
+The following packages are included in addition to Next.js & dependencies:
+* [Cypress](https://www.npmjs.com/package/cypress) - Fast, easy and reliable testing for anything that runs in a browser.
+* [ESLint](https://www.npmjs.com/package/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
+* [Jest](https://www.npmjs.com/package/jest) - Delightful JavaScript Testing.
+* [Prettier](https://www.npmjs.com/package/prettier) -  Prettier is an opinionated code formatter. 
+
+
 ## Pre-requisites
-`npm v8.0.0` or higher. Getstarted [here](https://www.npmjs.com/).
+`npm v8.0.0` or higher. Get started [here](https://www.npmjs.com/).
 
 ## Available Scripts
-See [package.json](https://github.com/crs-k/next-web-app-template/blob/add-cypress/package.json) for details.
+See [`package.json`](package.json) for details.
 | Name | Description |
 | ---- | ----------- |
 | `dev` | Starts the development server on `http://localhost:3000`. |
