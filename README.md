@@ -6,6 +6,7 @@
 # Next.js Web App Template Repository
 
 This repository is to be used as a template when creating new web apps using [Next.js with TypeScript](https://github.com/vercel/next.js/blob/canary/docs/basic-features/typescript.md).
+
 The following packages are included:
 * [Cypress](https://www.npmjs.com/package/cypress) - Fast, easy and reliable testing for anything that runs in a browser.
 * [ESLint](https://www.npmjs.com/package/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
