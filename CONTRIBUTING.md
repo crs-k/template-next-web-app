@@ -1,4 +1,4 @@
-# Contributing to Release Draft
+# Contributing to Next Web App Template
 Feel free to:
 
 - Report a bug
@@ -17,11 +17,11 @@ Pull requests are the best way to propose changes. To submit a change:
 5. Make sure your code lints.
 6. Issue a pull request
 
-## Report bugs using Github's [issues](https://github.com/crs-k/release-draft/issues/new?assignees=&labels=bug+%F0%9F%90%9B&template=bug_report.md&title=%5BBUG%5D)
-We use GitHub issues to track public bugs. Report a bug by [using this template](https://github.com/crs-k/release-draft/issues/new?assignees=&labels=bug+%F0%9F%90%9B&template=bug_report.md&title=%5BBUG%5D).
+## Report bugs using Github's [issues](https://github.com/crs-k/next-web-app-template/issues/new?assignees=&labels=bug+%F0%9F%90%9B&template=bug_report.md&title=%5BBUG%5D)
+We use GitHub issues to track public bugs. Report a bug by [using this template](https://github.com/crs-k/next-web-app-template/issues/new?assignees=&labels=bug+%F0%9F%90%9B&template=bug_report.md&title=%5BBUG%5D).
 
-## Suggest enhancements using Github's [issues](https://github.com/crs-k/release-draft/issues/new?assignees=&labels=enhancement+%F0%9F%92%8E&template=feature_request.md&title=%5BFEATURE%5D)
-We use GitHub issues to track feature requests. Suggest an enhancement by [using this template](https://github.com/crs-k/release-draft/issues/new?assignees=&labels=enhancement+%F0%9F%92%8E&template=feature_request.md&title=%5BFEATURE%5D).
+## Suggest enhancements using Github's [issues](https://github.com/crs-k/next-web-app-template/issues/new?assignees=&labels=enhancement+%F0%9F%92%8E&template=feature_request.md&title=%5BFEATURE%5D)
+We use GitHub issues to track feature requests. Suggest an enhancement by [using this template](https://github.com/crs-k/next-web-app-template/issues/new?assignees=&labels=enhancement+%F0%9F%92%8E&template=feature_request.md&title=%5BFEATURE%5D).
 
 ## Use a Consistent Coding Style
 The project's linter & formatting will be run on all PRs.
@@ -30,7 +30,7 @@ The project's linter & formatting will be run on all PRs.
 * You can try running `npm run lint` to lint new code.
 
 ## License
-By contributing, you agree that your contributions will be licensed under the [MIT License](https://github.com/crs-k/release-draft/blob/main/LICENSE).
+By contributing, you agree that your contributions will be licensed under the [MIT License](https://github.com/crs-k/next-web-app-template/blob/main/LICENSE).
 
 ## References
 This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/main/CONTRIBUTING.md)
