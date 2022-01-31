@@ -2,9 +2,8 @@
   "all": true,
   "report-dir": "./cypress-coverage",
   "check-coverage": true,
-  "branches": 200,
-  "lines": 200,
-  "functions": 200,
-  "statements": 200
-
+  "branches": 80,
+  "lines": 80,
+  "functions": 80,
+  "statements": 80
 }
