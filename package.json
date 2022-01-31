@@ -8,6 +8,7 @@
     "start": "next start",
     "test": "jest --coverage",
     "test:reset": "jest --updateSnapshot",
+    "test:nyc": "nyc mocha",
     "test:ci": "jest --ci",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
@@ -42,6 +43,18 @@
     "typescript": "4.5.5"
   },
   "nyc": {
-    "report-dir": "cypress-coverage"
+    "report-dir": "cypress-coverage",
+      "extension": [
+        ".ts",
+        ".tsx"
+      ],
+      "exclude": [
+        "**/*.d.ts"
+      ],
+      "reporter": [
+        "html"
+      ],
+      "all": true  
+    
   }
 }

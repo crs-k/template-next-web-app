@@ -10,6 +10,7 @@
 /cypress-coverage
 /coverage
 /instrumented
+/.nyc_output
 
 # next.js
 /.next/
