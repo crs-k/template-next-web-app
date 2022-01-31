@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import styles from '@/pages/index.module.css';
 
@@ -10,7 +11,11 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <nav>
+        <Link href="/about">
+          <a>About</a>
+        </Link>
+      </nav>
       <main>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
