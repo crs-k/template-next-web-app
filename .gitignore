@@ -6,6 +6,8 @@
 .pnp.js
 
 # testing
+/jest-coverage
+/cypress-coverage
 /coverage
 
 # next.js
