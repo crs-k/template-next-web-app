@@ -9,6 +9,7 @@
     "test": "jest --coverage",
     "test:reset": "jest --updateSnapshot",
     "test:ci": "jest --ci",
+    "nyc:coverage": "nyc report --reporter=text-summary --check-coverage",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test start http://localhost:3000 cypress",

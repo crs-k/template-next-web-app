@@ -61,6 +61,10 @@ jobs:
       - name: Test - End to End
         run: 'npm run e2e:headless'
 
+      - name: Test - Check Coverage
+        run: 'npm run nyc:coverage'
+        
+
   Test-Infrastructure:
     name: Test - Infrastructure
     runs-on: ubuntu-latest
