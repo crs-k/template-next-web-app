@@ -10,8 +10,8 @@ on:
     types: [published]
 
 jobs:
-  Lint:
-    name: Lint
+  Test-Lint:
+    name: Test - Linters
     runs-on: ubuntu-latest
     steps:
       - name: Print GitHub event action
@@ -55,7 +55,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       
-      - name: Lint
+      - name: Test - Lint
         run: 'npm run lint'
 
   Test-Infrastructure:
@@ -71,7 +71,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       
-      - name: Lint
+      - name: Test Infrastructure
         run: 'npm run lint'
 
   Test-Build:
@@ -131,7 +131,7 @@ jobs:
     name: Deploy to Development
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
     runs-on: ubuntu-latest
-    needs: [Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
     environment:
       name: Development
       url: 'https://cdk-dev.ahearth.com'
@@ -156,7 +156,7 @@ jobs:
     name: Deploy to Staging
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
     runs-on: ubuntu-latest
-    needs: [Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
     environment:
       name: Staging
       url: 'https://cdk-stage.ahearth.com'
@@ -181,7 +181,7 @@ jobs:
     name: Deploy to Production
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
     runs-on: ubuntu-latest
-    needs: [Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
     environment:
       name: Production
       url: 'https://cdk.ahearth.com'
