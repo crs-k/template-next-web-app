@@ -7,7 +7,7 @@
 
 This repository is to be used as a template when creating new web apps using [Next.js with TypeScript](https://github.com/vercel/next.js/blob/canary/docs/basic-features/typescript.md).
 
-The following packages are included:
+The following packages are included in addition to Next.js & dependencies:
 * [Cypress](https://www.npmjs.com/package/cypress) - Fast, easy and reliable testing for anything that runs in a browser.
 * [ESLint](https://www.npmjs.com/package/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 * [Jest](https://www.npmjs.com/package/jest) - Delightful JavaScript Testing.
@@ -15,7 +15,7 @@ The following packages are included:
 
 
 ## Pre-requisites
-`npm v8.0.0` or higher. Getstarted [here](https://www.npmjs.com/).
+`npm v8.0.0` or higher. Get started [here](https://www.npmjs.com/).
 
 ## Available Scripts
 See [`package.json`](package.json) for details.
