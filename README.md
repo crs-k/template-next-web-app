@@ -22,6 +22,10 @@ This repository is to be used as a template when creating new web apps using [Ne
 | `start` | Starts a Next.js production server | `next start` |
 | `test` | Runs unit tests with coverage output | `jest --coverage` |
 | `test:ci` | This changes the behavior when a new snapshot is encountered. Instead of the regular behavior of storing a new snapshot automatically, it will fail the test and require Jest to be run with `--updateSnapshot` | `jest --ci` |
+| `cypress` | Opens the Cypress browser. Run this in a separate terminal window after starting your server on `http://localhost:3000`. | `cypress open` |
+| `cypress:headless` | Runs Cypress headlessly. Run this in a separate terminal window after starting your server on `http://localhost:3000`. | `cypress run` |
+| `e2e` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test). | `start-server-and-test start http://localhost:3000 cypress` |
+| `e2e:headless` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly. | `start-server-and-test start http://localhost:3000 cypress:headless` |    
 | `all` | Runs several scripts for local testing. | `npm run format && npm run lint && npm run test && npm run build` |
 
 ## Contributing
