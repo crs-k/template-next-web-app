@@ -29,7 +29,7 @@
     "@testing-library/user-event": "13.5.0",
     "@types/react": "17.0.38",
     "babel-jest": "27.4.6",
-    "cypress": "^9.3.1",
+    "cypress": "^9.4.1",
     "check-code-coverage": "1.10.0",
     "eslint": "8.8.0",
     "eslint-config-next": "latest",
