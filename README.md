@@ -44,11 +44,11 @@ See [`package.json`](package.json) for details.
 ## Available Actions
 | Name | Description |
 | ---- | ----------- |
-| `CI-CD` | Runs [`Test-Lint`, `Test-Unit`, `Test-e2e`, `Test-Infrastructure`, `Test-Build`] then deploys to an environment based on release tag. |
-| `Dependabot Pull Request Approve and Merge` | Automatically approves and merges Dependabot PRs, except major releases. |
-| `Pull Request Labeler` | More info [here](https://github.com/actions/labeler). |
-| `Release Draft` | More info [here](https://github.com/marketplace/actions/release-draft). |
-| `Close stale issues and PRs` | More info [here](https://github.com/marketplace/actions/close-stale-issues). |
+| `ci-cd` | Runs [`Test-Lint`, `Test-Unit`, `Test-e2e`, `Test-Infrastructure`, `Test-Build`] then deploys to an environment based on release tag. |
+| `dependabot-automerge` | Automatically approves and merges Dependabot PRs, except major releases. |
+| `labeler` | More info [here](https://github.com/actions/labeler). |
+| `release-draft` | More info [here](https://github.com/marketplace/actions/release-draft). |
+| `stale` | More info [here](https://github.com/marketplace/actions/close-stale-issues). |
 
 ## Contributing
 Contributions are welcomed. Please read the [contributing](https://github.com/crs-k/next-web-app-template/blob/main/CONTRIBUTING.md).
