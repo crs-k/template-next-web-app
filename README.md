@@ -12,6 +12,7 @@ The following packages are included in addition to Next.js & dependencies:
 * [ESLint](https://www.npmjs.com/package/eslint) - ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 * [Jest](https://www.npmjs.com/package/jest) - Delightful JavaScript Testing.
 * [Prettier](https://www.npmjs.com/package/prettier) -  Prettier is an opinionated code formatter. 
+* [tailwindcss](https://www.npmjs.com/package/tailwindcss) -  A utility-first CSS framework for rapidly building custom user interfaces.
 
 
 ## Pre-requisites
