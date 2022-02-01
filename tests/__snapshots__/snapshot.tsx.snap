@@ -3,87 +3,142 @@
 exports[`renders homepage unchanged 1`] = `
 <div>
   <div
-    class="container"
+    class="flex flex-col items-center justify-center min-h-screen py-2"
   >
-    <nav>
-      <a
-        href="/about"
-      >
-        About
-      </a>
-    </nav>
-    <main>
-      <h1
-        class="title"
-      >
-        Welcome to 
+    <header>
+      <nav>
         <a
+          href="/"
+        >
+          Home
+        </a>
+         
+        |
+         
+        <a
+          href="/about"
+        >
+          About
+        </a>
+         
+        |
+         
+        <a
+          href="/users"
+        >
+          Users List
+        </a>
+         
+        |
+         
+        <a
+          href="/api/users"
+        >
+          Users API
+        </a>
+        <button
+          class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Toggle
+        </button>
+      </nav>
+    </header>
+    <main
+      class="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"
+    >
+      <h1
+        class="text-6xl font-bold"
+      >
+        Welcome to
+         
+        <a
+          class="text-blue-600"
           href="https://nextjs.org"
         >
           Next.js!
         </a>
       </h1>
       <p
-        class="description"
+        class="mt-3 text-2xl"
       >
-        Get started by editing 
-        <code>
+        Get started by editing
+         
+        <code
+          class="p-3 font-mono text-lg bg-gray-100 rounded-md"
+        >
           pages/index.js
         </code>
       </p>
       <div
-        class="grid"
+        class="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full"
       >
         <a
-          class="card"
+          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           href="https://nextjs.org/docs"
         >
-          <h3>
+          <h3
+            class="text-2xl font-bold"
+          >
             Documentation →
           </h3>
-          <p>
+          <p
+            class="mt-4 text-xl"
+          >
             Find in-depth information about Next.js features and API.
           </p>
         </a>
         <a
-          class="card"
+          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
           href="https://nextjs.org/learn"
         >
-          <h3>
+          <h3
+            class="text-2xl font-bold"
+          >
             Learn →
           </h3>
-          <p>
+          <p
+            class="mt-4 text-xl"
+          >
             Learn about Next.js in an interactive course with quizzes!
           </p>
         </a>
         <a
-          class="card"
-          href="https://github.com/vercel/next.js/tree/canary/examples"
+          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+          href="https://github.com/vercel/next.js/tree/master/examples"
         >
-          <h3>
+          <h3
+            class="text-2xl font-bold"
+          >
             Examples →
           </h3>
-          <p>
+          <p
+            class="mt-4 text-xl"
+          >
             Discover and deploy boilerplate example Next.js projects.
           </p>
         </a>
         <a
-          class="card"
-          href="https://vercel.com/new"
+          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+          href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
         >
-          <h3>
+          <h3
+            class="text-2xl font-bold"
+          >
             Deploy →
           </h3>
-          <p>
+          <p
+            class="mt-4 text-xl"
+          >
             Instantly deploy your Next.js site to a public URL with Vercel.
           </p>
         </a>
       </div>
     </main>
     <footer
-      class="footer"
+      class="flex items-center justify-center w-full h-24 border-t"
     >
       <a
+        class="flex items-center justify-center"
         href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
         rel="noopener noreferrer"
         target="_blank"
@@ -91,30 +146,27 @@ exports[`renders homepage unchanged 1`] = `
         Powered by
          
         <span
-          class="logo"
+          style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
         >
           <span
-            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+            style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
           >
-            <span
-              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
-            >
-              <img
-                alt=""
-                aria-hidden="true"
-                src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2772%27 height=%2716%27/%3e"
-                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
-              />
-            </span>
             <img
-              alt="Vercel Logo"
-              data-nimg="intrinsic"
-              decoding="async"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              alt=""
+              aria-hidden="true"
+              src="data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 version=%271.1%27 width=%2772%27 height=%2716%27/%3e"
+              style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
             />
-            <noscript />
           </span>
+          <img
+            alt="Vercel Logo"
+            class="h-4 ml-2"
+            data-nimg="intrinsic"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          />
+          <noscript />
         </span>
       </a>
     </footer>
