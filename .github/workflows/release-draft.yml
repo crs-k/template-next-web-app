@@ -19,6 +19,6 @@ jobs:
       uses: crs-k/release-draft@v0.6.0
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
-        release-strategy: 'triple'
+        #release-strategy: 'triple'
 
 
