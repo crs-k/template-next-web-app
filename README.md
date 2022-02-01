@@ -34,11 +34,21 @@ See [`package.json`](package.json) for details.
 | `npm run start` | Starts a Next.js production server. |
 | `npm run test` | Runs unit tests with coverage output. |
 | `npm run test:ci` | This changes the behavior when a new snapshot is encountered. Instead of the regular behavior of storing a new snapshot automatically, it will fail the test and require Jest to be run with `--updateSnapshot`. |
+| `nyc:coverage` | Runs coverage report on Cypress tests and checks for thresholds defined in [`.nycrc`](.nycrc). |
 | `npm run cypress` | Opens the Cypress browser. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
 | `npm run cypress:headless` | Runs Cypress headlessly. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
 | `npm run e2e` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test). |
 | `npm run e2e:headless` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly. |
 | `npm run all` | Runs `npm run format`, `npm run lint`, `npm run test`, and `npm run build` together for local testing. |
+
+## Available Actions
+| Name | Description |
+| ---- | ----------- |
+| `ci-cd` | Runs [`Test-Lint`, `Test-Unit`, `Test-e2e`, `Test-Infrastructure`, `Test-Build`] then deploys to an environment based on release tag. |
+| `dependabot-automerge` | Automatically approves and merges Dependabot PRs, except major releases. |
+| `labeler` | More info [here](https://github.com/actions/labeler). |
+| `release-draft` | More info [here](https://github.com/marketplace/actions/release-draft). |
+| `stale` | More info [here](https://github.com/marketplace/actions/close-stale-issues). |
 
 ## Contributing
 Contributions are welcomed. Please read the [contributing](https://github.com/crs-k/next-web-app-template/blob/main/CONTRIBUTING.md).
