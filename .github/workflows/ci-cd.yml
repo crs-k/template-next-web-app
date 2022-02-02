@@ -40,7 +40,7 @@ jobs:
         run: npm ci
       
       - name: Unit Tests
-        run: 'npm run test'
+        run: 'npm run test:ci'
 
   Test-e2e:
     name: Test - End to End
