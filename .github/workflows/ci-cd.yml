@@ -46,7 +46,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: unit-coverage-report
-          path: jest-coverage/
+          path: jest-coverage/lcov-report/
 
   Test-e2e:
     name: Test - End to End
@@ -74,7 +74,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: e2e-coverage-report
-          path: cypress-coverage/
+          path: cypress-coverage/lcov-report/
         
 
   Test-Infrastructure:
