@@ -1,8 +1,13 @@
-import Layout from '../components/Layout';
+import Layout from '@/components/Layout';
+import Head from 'next/head';
 
-export default function Home() {
-  return (
-    <Layout title="Next.js + TypeScript Example">
+const Home = () => (
+  <Layout title="Home">
+    <div>
+      <Head>
+        <title>Home</title>
+        <meta property="og:title" content="Home" key="title" />
+      </Head>
       <h1 className="text-6xl font-bold">
         Welcome to{' '}
         <a className="text-blue-600" href="https://nextjs.org">
@@ -50,6 +55,8 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </Layout>
-  );
-}
+    </div>
+  </Layout>
+);
+
+export default Home;

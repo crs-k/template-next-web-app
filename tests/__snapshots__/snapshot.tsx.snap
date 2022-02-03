@@ -5,133 +5,97 @@ exports[`renders homepage unchanged 1`] = `
   <div
     class="flex flex-col items-center justify-center min-h-screen py-2"
   >
-    <header>
-      <nav>
-        <a
-          href="/"
-        >
-          Home
-        </a>
-         
-        |
-         
-        <a
-          href="/about"
-        >
-          About
-        </a>
-         
-        |
-         
-        <a
-          href="/users"
-        >
-          Users List
-        </a>
-         
-        |
-         
-        <a
-          href="/api/users"
-        >
-          Users API
-        </a>
-        <button
-          class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        >
-          Toggle
-        </button>
-      </nav>
-    </header>
     <main
       class="flex flex-col items-center justify-center w-full flex-1 px-20 text-center"
     >
-      <h1
-        class="text-6xl font-bold"
-      >
-        Welcome to
-         
-        <a
-          class="text-blue-600"
-          href="https://nextjs.org"
+      <div>
+        <h1
+          class="text-6xl font-bold"
         >
-          Next.js!
-        </a>
-      </h1>
-      <p
-        class="mt-3 text-2xl"
-      >
-        Get started by editing
-         
-        <code
-          class="p-3 font-mono text-lg bg-gray-100 rounded-md"
+          Welcome to
+           
+          <a
+            class="text-blue-600"
+            href="https://nextjs.org"
+          >
+            Next.js!
+          </a>
+        </h1>
+        <p
+          class="mt-3 text-2xl"
         >
-          pages/index.js
-        </code>
-      </p>
-      <div
-        class="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full"
-      >
-        <a
-          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          href="https://nextjs.org/docs"
+          Get started by editing
+           
+          <code
+            class="p-3 font-mono text-lg bg-gray-100 rounded-md"
+          >
+            pages/index.js
+          </code>
+        </p>
+        <div
+          class="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full"
         >
-          <h3
-            class="text-2xl font-bold"
+          <a
+            class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            href="https://nextjs.org/docs"
           >
-            Documentation →
-          </h3>
-          <p
-            class="mt-4 text-xl"
+            <h3
+              class="text-2xl font-bold"
+            >
+              Documentation →
+            </h3>
+            <p
+              class="mt-4 text-xl"
+            >
+              Find in-depth information about Next.js features and API.
+            </p>
+          </a>
+          <a
+            class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            href="https://nextjs.org/learn"
           >
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-        <a
-          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          href="https://nextjs.org/learn"
-        >
-          <h3
-            class="text-2xl font-bold"
+            <h3
+              class="text-2xl font-bold"
+            >
+              Learn →
+            </h3>
+            <p
+              class="mt-4 text-xl"
+            >
+              Learn about Next.js in an interactive course with quizzes!
+            </p>
+          </a>
+          <a
+            class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            href="https://github.com/vercel/next.js/tree/master/examples"
           >
-            Learn →
-          </h3>
-          <p
-            class="mt-4 text-xl"
+            <h3
+              class="text-2xl font-bold"
+            >
+              Examples →
+            </h3>
+            <p
+              class="mt-4 text-xl"
+            >
+              Discover and deploy boilerplate example Next.js projects.
+            </p>
+          </a>
+          <a
+            class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
+            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           >
-            Learn about Next.js in an interactive course with quizzes!
-          </p>
-        </a>
-        <a
-          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          href="https://github.com/vercel/next.js/tree/master/examples"
-        >
-          <h3
-            class="text-2xl font-bold"
-          >
-            Examples →
-          </h3>
-          <p
-            class="mt-4 text-xl"
-          >
-            Discover and deploy boilerplate example Next.js projects.
-          </p>
-        </a>
-        <a
-          class="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-        >
-          <h3
-            class="text-2xl font-bold"
-          >
-            Deploy →
-          </h3>
-          <p
-            class="mt-4 text-xl"
-          >
-            Instantly deploy your Next.js site to a public URL with Vercel.
-          </p>
-        </a>
+            <h3
+              class="text-2xl font-bold"
+            >
+              Deploy →
+            </h3>
+            <p
+              class="mt-4 text-xl"
+            >
+              Instantly deploy your Next.js site to a public URL with Vercel.
+            </p>
+          </a>
+        </div>
       </div>
     </main>
     <footer
