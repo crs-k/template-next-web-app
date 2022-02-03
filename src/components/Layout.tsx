@@ -2,7 +2,6 @@ import React, {ReactNode} from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
-import {darkToggle} from '../utils/darkmode-toggle';
 
 type Props = {
   children?: ReactNode;
@@ -34,12 +33,6 @@ const Layout = ({children, title = 'This is the default title'}: Props) => (
         <Link href="/api/users">
           <a>Users API</a>
         </Link>
-        <button
-          onClick={darkToggle()}
-          className="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-        >
-          Toggle
-        </button>
       </nav>
     </header>
     <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
