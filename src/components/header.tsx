@@ -85,6 +85,11 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.navItem}>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+          <li className={styles.navItem}>
             <Link href="">
               <a onClick={darkToggle()}>Theme</a>
             </Link>
