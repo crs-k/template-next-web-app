@@ -1,12 +1,8 @@
-import '@/styles/globals.css';
+import {SessionProvider} from 'next-auth/react';
 import type {AppProps} from 'next/app';
-import React from 'react';
-import '../styles/globals.css';
 import {ThemeProvider} from 'next-themes';
 import type {ReactElement, ReactNode} from 'react';
 import type {NextPage} from 'next';
-import Layout from '@/components/Layout';
-import NavBar from '@/components/Nav';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -20,12 +16,15 @@ export default function MyApp({Component, pageProps}: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? (page => page);
   return getLayout(
     <>
-      <ThemeProvider attribute="class">
-        <Layout>
-          <NavBar />
+      <SessionProvider
+        // Provider options are not required but can be useful in situations where
+        // you have a short session maxAge time. Shown here with default values.
+        session={pageProps.session}
+      >
+        <ThemeProvider attribute="class">
           <Component {...pageProps} />
-        </Layout>
-      </ThemeProvider>
+        </ThemeProvider>
+      </SessionProvider>
     </>
   );
 }
