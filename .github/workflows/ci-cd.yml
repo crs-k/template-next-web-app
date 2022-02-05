@@ -87,8 +87,8 @@ jobs:
           path: |
             .next
 
-  Test-e2e:
-    name: Test - End to End
+  Test-e2e-electron:
+    name: Test - e2e - Electron
     runs-on: ubuntu-latest
     needs: Test-Build
     steps:
@@ -229,7 +229,7 @@ jobs:
     name: Deploy to Development
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
+    needs: [Test-Lint, Test-Unit, Test-e2e-electron, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Development
       url: 'https://cdk-dev.ahearth.com'
@@ -254,7 +254,7 @@ jobs:
     name: Deploy to Staging
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
+    needs: [Test-Lint, Test-Unit, Test-e2e-electron, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Staging
       url: 'https://cdk-stage.ahearth.com'
@@ -279,7 +279,7 @@ jobs:
     name: Deploy to Production
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
+    needs: [Test-Lint, Test-Unit, Test-e2e-electron, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Production
       url: 'https://cdk.ahearth.com'
