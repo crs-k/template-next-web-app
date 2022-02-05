@@ -1,12 +1,12 @@
 import {signIn, signOut, useSession} from 'next-auth/react';
 import Link from 'next/link';
-import styles from './header.module.css';
 import {darkToggle} from '../utils/darkmode-toggle';
+import styles from './header.module.css';
 
 // The approach used in this component shows how to built a sign in and sign out
 // component that works on pages which support both client and server side
 // rendering, and avoids any flash incorrect content on initial page load.
-export default function Header() {
+export default function Header(): JSX.Element {
   const {data: session, status} = useSession();
   const loading = status === 'loading';
 

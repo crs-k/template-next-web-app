@@ -1,15 +1,15 @@
-import Link from 'next/link';
 import {Layout} from '../components/Layout';
+import Link from 'next/link';
 
-const Custom404 = () => (
-  <Layout title="404">
-    <h1>404 - Page Not Found</h1>
-    <p>
-      <Link href="/">
-        <a>Go home</a>
-      </Link>
-    </p>
-  </Layout>
-);
-
-export default Custom404;
+export default function Custom404(): JSX.Element {
+  return (
+    <Layout title="404">
+      <h1>404 - Page Not Found</h1>
+      <p>
+        <Link href="/">
+          <a>Go home</a>
+        </Link>
+      </p>
+    </Layout>
+  );
+}

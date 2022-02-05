@@ -1,16 +1,16 @@
-import {useState, useEffect} from 'react';
-import {useSession} from 'next-auth/react';
-import {Layout} from '../components/Layout';
+import {useEffect, useState} from 'react';
 import AccessDenied from '../components/access-denied';
+import {Layout} from '../components/Layout';
+import {useSession} from 'next-auth/react';
 
-export default function Page() {
+export default function Page(): JSX.Element | null {
   const {data: session, status} = useSession();
   const loading = status === 'loading';
   const [content, setContent] = useState();
 
   // Fetch content from protected route
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (): Promise<void> => {
       const res = await fetch('/api/examples/protected');
       const json = await res.json();
       if (json.content) {
