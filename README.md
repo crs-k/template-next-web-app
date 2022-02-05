@@ -13,6 +13,7 @@ The following packages are included in addition to Next.js & dependencies:
 * [Jest](https://www.npmjs.com/package/jest) - Delightful JavaScript Testing.
 * [Prettier](https://www.npmjs.com/package/prettier) -  Prettier is an opinionated code formatter. 
 * [tailwindcss](https://www.npmjs.com/package/tailwindcss) -  A utility-first CSS framework for rapidly building custom user interfaces.
+* [next-auth](https://www.npmjs.com/package/next-auth) -  NextAuth.js is a complete open source authentication solution for Next.js applications.
 
 ## Pre-requisites
 `npm v8.0.0` or higher. Get started [here](https://www.npmjs.com/).
