@@ -1,13 +1,13 @@
 import React, {ReactNode} from 'react';
-import Header from './header';
 import Footer from './footer';
+import Header from './header';
 
-type Props = {
+interface Props  {
   children?: ReactNode;
   title?: string;
-};
+}
 
-const Layout = ({children, title = 'Default'}: Props) => (
+export const Layout = ({children, title = 'Default'}: Props): JSX.Element => (
   <div className="flex flex-col items-center justify-center min-h-screen py-2">
     <Header />
     <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
@@ -17,4 +17,4 @@ const Layout = ({children, title = 'Default'}: Props) => (
   </div>
 );
 
-export default Layout;
+//export default Layout;
