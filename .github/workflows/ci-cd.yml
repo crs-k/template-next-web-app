@@ -76,34 +76,6 @@ jobs:
           name: e2e-coverage-report
           path: cypress-coverage/lcov-report/
 
-  Test-e2e-edge:
-    name: Test - e2e - Edge
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print GitHub event action
-        run: |
-          echo "${{ github.event.action }}"
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build - End to End
-        run: 'npm run build'  
-      
-      - name: Test - End to End - Edge
-        run: 'npm run e2e:headless:edge'
-
-      - name: Test - Check Coverage
-        run: 'npm run nyc:coverage'
-
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v2
-        with:
-          name: e2e-edge-coverage-report
-          path: cypress-coverage/lcov-report/
-
   Test-e2e-chrome:
     name: Test - e2e - Chrome
     runs-on: ubuntu-latest
@@ -284,7 +256,7 @@ jobs:
     name: Deploy to Production
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Production
       url: 'https://cdk.ahearth.com'
