@@ -82,15 +82,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Cache
-        uses: actions/cache@v2
-        id: node-cache
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-
       - name: Install Dependencies
-        if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Download Build
@@ -151,19 +143,10 @@ jobs:
       - name: Print GitHub event action
         run: |
           echo "${{ github.event.action }}"
-
       - name: Checkout Repo
         uses: actions/checkout@v2
 
-      - name: Cache
-        uses: actions/cache@v2
-        id: node-cache
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-
       - name: Install Dependencies
-        if: steps.node-cache.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Download Build
