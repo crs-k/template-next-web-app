@@ -173,6 +173,9 @@ jobs:
       
       - name: Test - End to End - Firefox
         run: 'npm run e2e:headless:firefox'
+      
+      - name: Test - End to End - Chrome
+        run: 'npm run e2e:headless:chrome'
 
       - name: Test - Check Coverage
         run: 'npm run nyc:coverage'
