@@ -1,4 +1,7 @@
 {
+  "name": "nextjs-web-app-template-repository",
+  "version": "0.0.0",
+  "description": "A template for creating new web apps using Next.js with TypeScript.",
   "private": true,
   "scripts": {
     "dev": "next dev",
