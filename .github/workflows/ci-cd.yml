@@ -48,35 +48,6 @@ jobs:
           name: unit-coverage-report
           path: jest-coverage/lcov-report/
 
-  Test-e2e:
-    name: Test - End to End
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print GitHub event action
-        run: |
-          echo "${{ github.event.action }}"
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Build - End to End
-        run: 'npm run build'  
-      
-      - name: Test - End to End
-        run: 'npm run e2e:headless'
-
-      - name: Test - Check Coverage
-        run: 'npm run nyc:coverage'
-
-      - name: Archive code coverage results
-        uses: actions/upload-artifact@v2
-        with:
-          name: e2e-coverage-report
-          path: cypress-coverage/lcov-report/
-        
-
   Test-Infrastructure:
     name: Test - Infrastructure
     runs-on: ubuntu-latest
@@ -107,7 +78,115 @@ jobs:
         run: npm ci
       
       - name: Build
-        run: 'npm run build'  
+        run: 'npm run build'
+
+      - name: Save Build
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: |
+            .next
+
+  Test-e2e-electron:
+    name: Test - e2e - Electron
+    runs-on: ubuntu-latest
+    needs: Test-Build
+    steps:
+      - name: Print GitHub event action
+        run: |
+          echo "${{ github.event.action }}"
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Download Build
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: .next/
+      
+      - name: Test - End to End
+        run: 'npm run e2e:headless'
+
+      - name: Test - Check Coverage
+        run: 'npm run nyc:coverage'
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: e2e-electron-coverage-report
+          path: cypress-coverage/lcov-report/
+
+  Test-e2e-chrome:
+    name: Test - e2e - Chrome
+    runs-on: ubuntu-latest
+    needs: Test-Build
+    steps:
+      - name: Print GitHub event action
+        run: |
+          echo "${{ github.event.action }}"
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Download Build
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: .next/ 
+      
+      - name: Test - End to End - Chrome
+        run: 'npm run e2e:headless:chrome'
+
+      - name: Test - Check Coverage
+        run: 'npm run nyc:coverage'
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: e2e-chrome-coverage-report
+          path: cypress-coverage/lcov-report/       
+
+  Test-e2e-firefox:
+    name: Test - e2e - Firefox
+    runs-on: ubuntu-latest
+    needs: Test-Build
+    steps:
+      - name: Print GitHub event action
+        run: |
+          echo "${{ github.event.action }}"
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Download Build
+        uses: actions/download-artifact@v2
+        with:
+          name: build
+          path: .next/
+      
+      - name: Test - End to End - Firefox
+        run: 'npm run e2e:headless:firefox'
+
+      - name: Test - Check Coverage
+        run: 'npm run nyc:coverage'
+
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: e2e-firefox-coverage-report
+          path: cypress-coverage/lcov-report/               
+        
+
+
+
+  
 
 #  Build:
 #    name: Build
@@ -150,7 +229,7 @@ jobs:
     name: Deploy to Development
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e-electron, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Development
       url: 'https://cdk-dev.ahearth.com'
@@ -175,7 +254,7 @@ jobs:
     name: Deploy to Staging
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e-electron, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Staging
       url: 'https://cdk-stage.ahearth.com'
@@ -200,7 +279,7 @@ jobs:
     name: Deploy to Production
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
     runs-on: ubuntu-latest
-    needs: [Test-Lint, Test-Unit, Test-e2e, Test-Infrastructure, Test-Build]
+    needs: [Test-Lint, Test-Unit, Test-e2e-electron, Test-Infrastructure, Test-e2e-chrome, Test-e2e-firefox]
     environment:
       name: Production
       url: 'https://cdk.ahearth.com'
