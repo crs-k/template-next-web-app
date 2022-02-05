@@ -146,7 +146,8 @@ jobs:
       - name: Download Build
         uses: actions/download-artifact@v2
         with:
-          name: build 
+          name: build
+          path: .next/
       
       - name: Test - End to End - Firefox
         run: 'npm run e2e:headless:firefox'
