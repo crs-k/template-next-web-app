@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/crs-k/next-web-app-template/actions"><img alt="ci status" src="https://github.com/crs-k/next-web-app-template/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/crs-k/next-web-app-template/actions"><img alt="ci status" src="https://github.com/crs-k/next-web-app-template/actions/workflows/ci-cd.yml/badge.svg"></a>
   <a href="https://github.com/crs-k/next-web-app-template/actions"><img alt="ci status" src="https://github.com/crs-k/next-web-app-template/actions/workflows/codeql-analysis.yml/badge.svg"></a>
 </p>
 
