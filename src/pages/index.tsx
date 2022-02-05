@@ -2,7 +2,6 @@ import Layout from '@/components/Layout';
 import Head from 'next/head';
 
 const Page = () => (
-  
   <Layout title="Home">
     <h1 className="text-6xl font-bold">
       Welcome to{' '}

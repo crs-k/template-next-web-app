@@ -8,9 +8,8 @@ type Props = {
 };
 
 const Layout = ({children, title = 'Default'}: Props) => (
-  
   <div className="flex flex-col items-center justify-center min-h-screen py-2">
-  <Header />  
+    <Header />
     <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
       {children}
     </main>
