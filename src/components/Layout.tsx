@@ -2,11 +2,12 @@ import React, {ReactNode} from 'react';
 import Footer from './footer';
 import Header from './header';
 
-interface Props  {
+interface Props {
   children?: ReactNode;
   title?: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Layout = ({children, title = 'Default'}: Props): JSX.Element => (
   <div className="flex flex-col items-center justify-center min-h-screen py-2">
     <Header />
@@ -16,5 +17,3 @@ export const Layout = ({children, title = 'Default'}: Props): JSX.Element => (
     <Footer />
   </div>
 );
-
-//export default Layout;

@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import styles from './footer.module.css';
 import packageInfo from '../../package.json';
+import styles from './footer.module.css';
 
-export default function Footer() {
+export default function Footer(): JSX.Element {
   return (
     <footer className={styles.footer}>
       <hr />

@@ -1,6 +1,6 @@
 import {Layout} from '../components/Layout';
 
-export default function Page() {
+export default function Page(): JSX.Element {
   return (
     <Layout>
       <p>
