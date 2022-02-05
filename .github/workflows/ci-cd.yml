@@ -116,7 +116,7 @@ jobs:
       - name: Archive code coverage results
         uses: actions/upload-artifact@v2
         with:
-          name: e2e-coverage-report
+          name: e2e-electron-coverage-report
           path: cypress-coverage/lcov-report/
 
   Test-e2e-chrome:
