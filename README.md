@@ -14,7 +14,6 @@ The following packages are included in addition to Next.js & dependencies:
 * [Prettier](https://www.npmjs.com/package/prettier) -  Prettier is an opinionated code formatter. 
 * [tailwindcss](https://www.npmjs.com/package/tailwindcss) -  A utility-first CSS framework for rapidly building custom user interfaces.
 
-
 ## Pre-requisites
 `npm v8.0.0` or higher. Get started [here](https://www.npmjs.com/).
 
@@ -56,6 +55,7 @@ See [`package.json`](package.json) for details.
 | `labeler` | More info [here](https://github.com/actions/labeler). |
 | `release-draft` | More info [here](https://github.com/marketplace/actions/release-draft). |
 | `stale` | More info [here](https://github.com/marketplace/actions/close-stale-issues). |
+| `codeql-analysis` | More info [here](https://codeql.github.com/). |
 
 ## Contributing
 Contributions are welcomed. Please read the [contributing](https://github.com/crs-k/next-web-app-template/blob/main/CONTRIBUTING.md).
