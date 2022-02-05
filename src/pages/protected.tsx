@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {useSession} from 'next-auth/react';
-import Layout from '../components/Layout';
+import {Layout} from '../components/Layout';
 import AccessDenied from '../components/access-denied';
 
 export default function Page() {
