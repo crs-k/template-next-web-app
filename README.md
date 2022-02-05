@@ -15,7 +15,6 @@ The following packages are included in addition to Next.js & dependencies:
 * [tailwindcss](https://www.npmjs.com/package/tailwindcss) -  A utility-first CSS framework for rapidly building custom user interfaces.
 * [next-auth](https://www.npmjs.com/package/next-auth) -  NextAuth.js is a complete open source authentication solution for Next.js applications.
 
-
 ## Pre-requisites
 `npm v8.0.0` or higher. Get started [here](https://www.npmjs.com/).
 
@@ -36,11 +35,17 @@ See [`package.json`](package.json) for details.
 | `npm run start` | Starts a Next.js production server. |
 | `npm run test` | Runs unit tests with coverage output. |
 | `npm run test:ci` | This changes the behavior when a new snapshot is encountered. Instead of the regular behavior of storing a new snapshot automatically, it will fail the test and require Jest to be run with `--updateSnapshot`. |
-| `nyc:coverage` | Runs coverage report on Cypress tests and checks for thresholds defined in [`.nycrc`](.nycrc). |
+| `npm run nyc:coverage` | Runs coverage report on Cypress tests and checks for thresholds defined in [`.nycrc`](.nycrc). |
 | `npm run cypress` | Opens the Cypress browser. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
 | `npm run cypress:headless` | Runs Cypress headlessly. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
+| `npm run cypress:headless:edge` | Runs Cypress headlessly with Edge. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
+| `npm run cypress:headless:chrome` | Runs Cypress headlessly with Chrome. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
+| `npm run cypress:headless:firefox` | Runs Cypress headlessly with Firefox. Run this in a separate terminal window after starting your server on `http://localhost:3000`. |
 | `npm run e2e` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test). |
 | `npm run e2e:headless` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly. |
+| `npm run e2e:headless:edge` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly with Edge. |
+| `npm run e2e:headless:chrome` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly with Chrome. |
+| `npm run e2e:headless:firefox` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly with Firefox. |
 | `npm run all` | Runs `npm run format`, `npm run lint`, `npm run test`, and `npm run build` together for local testing. |
 
 ## Available Actions
@@ -51,6 +56,7 @@ See [`package.json`](package.json) for details.
 | `labeler` | More info [here](https://github.com/actions/labeler). |
 | `release-draft` | More info [here](https://github.com/marketplace/actions/release-draft). |
 | `stale` | More info [here](https://github.com/marketplace/actions/close-stale-issues). |
+| `codeql-analysis` | More info [here](https://codeql.github.com/). |
 
 ## Contributing
 Contributions are welcomed. Please read the [contributing](https://github.com/crs-k/next-web-app-template/blob/main/CONTRIBUTING.md).
