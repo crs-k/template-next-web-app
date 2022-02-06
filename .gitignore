@@ -1,5 +1,11 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# CDK Context & Staging files
+#cdk.context.json
+.cdk.staging/
+cdk.out/
+*.tabl.json
+
 # dependencies
 /node_modules
 /.pnp
