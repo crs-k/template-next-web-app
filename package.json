@@ -7,7 +7,6 @@
     "lint": "next lint",
     "format": "prettier --write **/*.tsx",
     "build": "next build",
-    "build:instrument": "next build ./instrumented",
     "start": "next start",
     "test": "jest --coverage",
     "test:reset": "jest --updateSnapshot",
