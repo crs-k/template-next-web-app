@@ -79,10 +79,6 @@ jobs:
       
       - name: Build
         run: 'npm run build'
-        env:
-          GITHUB_ID: ${{ secrets.PROVIDER_GITHUB_ID }}
-          GITHUB_SECRET: ${{ secrets.PROVIDER_GITHUB_SECRET }}
-          NEXTAUTH_URL: {{ secrets.NEXTAUTH_URL }}
 
       - name: Save Build
         uses: actions/upload-artifact@v2
