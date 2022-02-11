@@ -66,6 +66,11 @@ jobs:
 
   Test-Build:
     name: Test - Build
+    env:
+      NEXTAUTH_URL: www.test.com
+      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
+      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      
     runs-on: ubuntu-latest
     steps:
       - name: Print GitHub event action
