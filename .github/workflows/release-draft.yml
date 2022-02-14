@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Release Draft
-      uses: crs-k/release-draft@v0.6.0
+      uses: crs-k/release-draft@v0.6.1
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
         #release-strategy: 'triple'
