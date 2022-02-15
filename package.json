@@ -13,6 +13,7 @@
     "test:ci": "jest --ci",
     "nyc:coverage": "nyc report --reporter=text-summary --check-coverage",
     "nyc:instrument": "nyc instrument --compact=false src instrumented",
+    "nyc:inplace": "nyc instrument --compact=false --in-place src",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "cypress:headless:edge": "cypress run --browser edge",
