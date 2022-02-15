@@ -97,6 +97,7 @@ jobs:
 
   Production-Build:
     name: Production - Build
+    if: (github.event_name == 'release')
     needs: [Test-e2e-electron, Test-e2e-chrome, Test-e2e-firefox]
     env:
       NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
