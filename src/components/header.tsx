@@ -90,7 +90,7 @@ export default function Header(): JSX.Element {
             </Link>
           </li>
           <li className={styles.navItem}>
-            <Link href="">
+            <Link href="" scroll={false}>
               <a onClick={darkToggle()}>Theme</a>
             </Link>
           </li>
