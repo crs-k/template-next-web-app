@@ -82,9 +82,6 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-              
-      - name: Instrument code for e2e
-        run: 'npm run nyc:inplace'
       
       - name: Build
         run: 'npm run build'

@@ -1,4 +1,4 @@
-// babel.config.js
+// babel.config.js https://github.com/vercel/next.js/discussions/30174#discussioncomment-1522635
 module.exports = function (api) {
     api.cache(true);
   
