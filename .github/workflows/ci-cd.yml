@@ -52,28 +52,24 @@ jobs:
     name: Test - Infrastructure
     runs-on: ubuntu-latest
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo "${{ github.event.action }}"
-      - name: Checkout Repo
-        uses: actions/checkout@v2
+      #- name: Checkout Repo
+      #  uses: actions/checkout@v2
 
-      - name: Install Dependencies
-        run: npm ci
+      #- name: Install Dependencies
+      #  run: npm ci
       
       - name: Test Infrastructure
-        run: 'npm run lint'
+        run: echo "Pending"
 
-  Test-Build:
-    name: Test - Build
+  Test-e2e-electron:
+    name: Test - e2e - Electron
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
+    runs-on: ubuntu-latest
     env:
       NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
       GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
       GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
       INSTRUMENT_COVERAGE: true
-
-    runs-on: ubuntu-latest
     steps:
       - name: Print GitHub event action
         run: |
@@ -83,69 +79,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
-      
+
       - name: Build
         run: 'npm run build'
-
-      - name: Save Test Build
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-build
-          retention-days: 1
-          path: |
-            .next
-
-  Production-Build:
-    name: Production - Build
-    if: (github.event_name == 'release')
-    needs: [Test-e2e-electron, Test-e2e-chrome, Test-e2e-firefox]
-    env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
-      INSTRUMENT_COVERAGE: false
-
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print GitHub event action
-        run: |
-          echo "${{ github.event.action }}"
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm ci
-      
-      - name: Build
-        run: 'npm run build'
-
-      - name: Save Production Build
-        uses: actions/upload-artifact@v2
-        with:
-          name: prod-build
-          retention-days: 1
-          path: |
-            .next
-
-  Test-e2e-electron:
-    name: Test - e2e - Electron
-    runs-on: ubuntu-latest
-    needs: Test-Build
-    steps:
-      - name: Print GitHub event action
-        run: |
-          echo "${{ github.event.action }}"
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm ci
-
-      - name: Download Test Build
-        uses: actions/download-artifact@v2
-        with:
-          name: test-build
-          path: .next/
       
       - name: Test - End to End
         run: 'npm run e2e:headless'
@@ -161,8 +97,13 @@ jobs:
 
   Test-e2e-chrome:
     name: Test - e2e - Chrome
+    needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
-    needs: Test-Build
+    env:
+      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
+      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
+      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      INSTRUMENT_COVERAGE: true
     steps:
       - name: Print GitHub event action
         run: |
@@ -173,11 +114,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Download Test Build
-        uses: actions/download-artifact@v2
-        with:
-          name: test-build
-          path: .next/ 
+      - name: Build
+        run: 'npm run build'
       
       - name: Test - End to End - Chrome
         run: 'npm run e2e:headless:chrome'
@@ -193,8 +131,13 @@ jobs:
 
   Test-e2e-firefox:
     name: Test - e2e - Firefox
+    needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
-    needs: Test-Build
+    env:
+      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
+      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
+      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      INSTRUMENT_COVERAGE: true
     steps:
       - name: Print GitHub event action
         run: |
@@ -205,11 +148,8 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: Download Test Build
-        uses: actions/download-artifact@v2
-        with:
-          name: test-build
-          path: .next/
+      - name: Build
+        run: 'npm run build'
       
       - name: Test - End to End - Firefox
         run: 'npm run e2e:headless:firefox'
@@ -227,6 +167,12 @@ jobs:
   deploy-to-dev:
     name: Deploy to Development
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
+    needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
+    env:
+      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
+      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
+      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     needs: [Production-Build]
     environment:
@@ -252,6 +198,12 @@ jobs:
   deploy-to-stage:
     name: Deploy to Staging
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
+    needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
+    env:
+      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
+      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
+      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     needs: [Production-Build]
     environment:
@@ -277,6 +229,12 @@ jobs:
   deploy-to-production:
     name: Deploy to Production
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
+    needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
+    env:
+      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
+      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
+      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     needs: [Production-Build]
     environment:
