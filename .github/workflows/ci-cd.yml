@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Print GitHub event action
         run: |
-          echo "${{ github.event.action }}"
+          echo '${{ github.event.action }}'
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Print GitHub event action
         run: |
-          echo "${{ github.event.action }}"
+          echo '${{ github.event.action }}'
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -59,21 +59,21 @@ jobs:
       #  run: npm ci
       
       - name: Test Infrastructure
-        run: echo "Pending"
+        run: echo 'Pending'
 
   Test-e2e-electron:
     name: Test - e2e - Electron
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: true
     steps:
       - name: Print GitHub event action
         run: |
-          echo "${{ github.event.action }}"
+          echo '${{ github.event.action }}'
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -100,14 +100,14 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: true
     steps:
       - name: Print GitHub event action
         run: |
-          echo "${{ github.event.action }}"
+          echo '${{ github.event.action }}'
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -134,14 +134,14 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: true
     steps:
       - name: Print GitHub event action
         run: |
-          echo "${{ github.event.action }}"
+          echo '${{ github.event.action }}'
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -169,14 +169,14 @@ jobs:
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      NEXTAUTH_URL: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
+      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
       name: Development
-      url: 'https://cdk-dev.ahearth.com'
+      url: $NEXTAUTH_URL
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -199,14 +199,14 @@ jobs:
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      NEXTAUTH_URL: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
+      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
       name: Staging
-      url: 'https://cdk-stage.ahearth.com'
+      url: $NEXTAUTH_URL
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -229,14 +229,14 @@ jobs:
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: "${{ secrets.NEXTAUTH_URL }}"
-      GITHUB_ID: "${{ secrets.PROVIDER_GITHUB_ID }}"
-      GITHUB_SECRET: "${{ secrets.PROVIDER_GITHUB_SECRET }}"
+      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
       name: Production
-      url: 'https://cdk.ahearth.com'
+      url: $NEXTAUTH_URL
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
