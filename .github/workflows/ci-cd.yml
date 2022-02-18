@@ -179,7 +179,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Development
-      url: $NEXTAUTH_URL
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -198,7 +197,7 @@ jobs:
         run: npm run cdk:build
 
       - name: CDK Deploy
-        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
+        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$NEXTAUTH_URL --require-approval never'
 
   deploy-to-stage:
     name: Deploy to Staging
@@ -210,7 +209,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Staging
-      url: $NEXTAUTH_URL
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -229,7 +227,7 @@ jobs:
         run: npm run cdk:build
 
       - name: CDK Deploy
-        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
+        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=NEXTAUTH_URL --require-approval never'
 
   deploy-to-production:
     name: Deploy to Production
@@ -241,7 +239,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Production
-      url: $NEXTAUTH_URL
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -260,4 +257,4 @@ jobs:
         run: npm run cdk:build
 
       - name: CDK Deploy
-        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
+        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=NEXTAUTH_URL --require-approval never'
