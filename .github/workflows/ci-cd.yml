@@ -59,7 +59,7 @@ jobs:
         run: npm ci
       
       - name: Build CDK
-        run: npm run build:cdk
+        run: npm run cdk:build
 
       - name: Nag CDK
         run: npm run cdk synth
