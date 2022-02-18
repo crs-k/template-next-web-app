@@ -194,6 +194,9 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Build CDK
+        run: npm run cdk:build
+
       - name: CDK Deploy
         run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
 
@@ -221,6 +224,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+      
+      - name: Build CDK
+        run: npm run cdk:build
 
       - name: CDK Deploy
         run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
@@ -249,6 +255,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm ci
+
+      - name: Build CDK
+        run: npm run cdk:build
 
       - name: CDK Deploy
         run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
