@@ -37,3 +37,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+#cdk
+cdk.context.json
+cdk.out
