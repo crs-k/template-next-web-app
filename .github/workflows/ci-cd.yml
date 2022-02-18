@@ -69,7 +69,14 @@ jobs:
         run: npm run cdk:build
 
       - name: Nag CDK
-        run: npm run cdk synth
+        run: 'npm run cdk -- synth -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain'
+        env:
+          aws_account: ${{ secrets.AWS_TARGET_ACCOUNT }}
+          aws_region: ${{ secrets.AWS_REGION }}
+          aws_role: ${{ secrets.AMPLIFY_ROLE }}
+          github_owner: crs-k
+          github_repository: template-next-web-app
+          aws_domain: ${{ secrets.NEXTAUTH_URL }}
 
   Test-e2e-electron:
     name: Test - e2e - Electron
