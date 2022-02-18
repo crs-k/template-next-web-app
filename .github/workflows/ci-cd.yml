@@ -24,9 +24,7 @@ jobs:
     name: Test - Linters
     runs-on: ubuntu-latest
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo '${{ github.event.action }}'
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -40,9 +38,7 @@ jobs:
     name: Test - Unit
     runs-on: ubuntu-latest
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo '${{ github.event.action }}'
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -88,13 +84,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
-      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
-      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: true
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo '${{ github.event.action }}'
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -122,13 +114,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
-      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
-      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: true
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo '${{ github.event.action }}'
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
@@ -156,13 +144,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
-      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
-      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: true
     steps:
-      - name: Print GitHub event action
-        run: |
-          echo '${{ github.event.action }}'
+
       - name: Checkout Repo
         uses: actions/checkout@v2
 
