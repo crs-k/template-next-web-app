@@ -9,6 +9,16 @@ on:
   release:
     types: [published]
 
+env:
+  aws_account: ${{ secrets.AWS_TARGET_ACCOUNT }}
+  aws_region: ${{ secrets.AWS_REGION }}
+  aws_role: ${{ secrets.AMPLIFY_ROLE }}
+  github_owner: crs-k
+  github_repository: template-next-web-app
+  aws_domain: ${{ secrets.NEXTAUTH_URL }}
+  GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
+  GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
+
 jobs:
   Test-Lint:
     name: Test - Linters
@@ -70,13 +80,7 @@ jobs:
 
       - name: Nag CDK
         run: 'npm run cdk -- synth -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain'
-        env:
-          aws_account: ${{ secrets.AWS_TARGET_ACCOUNT }}
-          aws_region: ${{ secrets.AWS_REGION }}
-          aws_role: ${{ secrets.AMPLIFY_ROLE }}
-          github_owner: crs-k
-          github_repository: template-next-web-app
-          aws_domain: ${{ secrets.NEXTAUTH_URL }}
+
 
   Test-e2e-electron:
     name: Test - e2e - Electron
@@ -187,8 +191,6 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
       NEXTAUTH_URL: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
-      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
-      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
@@ -209,7 +211,7 @@ jobs:
         run: npm ci
 
       - name: CDK Deploy
-        run: 'npm run cdk -- deploy -c siteSubDomain=cdk-dev -c region=us-east-1 --require-approval never'
+        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
 
   deploy-to-stage:
     name: Deploy to Staging
@@ -217,8 +219,6 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
       NEXTAUTH_URL: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
-      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
-      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
@@ -239,7 +239,7 @@ jobs:
         run: npm ci
 
       - name: CDK Deploy
-        run: 'npm run cdk -- deploy -c siteSubDomain=cdk-stage -c region=us-east-1 --require-approval never'
+        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
 
   deploy-to-production:
     name: Deploy to Production
@@ -247,8 +247,6 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
       NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
-      GITHUB_ID: '${{ secrets.PROVIDER_GITHUB_ID }}'
-      GITHUB_SECRET: '${{ secrets.PROVIDER_GITHUB_SECRET }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
@@ -269,4 +267,4 @@ jobs:
         run: npm ci
 
       - name: CDK Deploy
-        run: 'npm run cdk -- deploy -c siteSubDomain=cdk -c region=us-east-1 --require-approval never'
+        run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$domain --require-approval never'
