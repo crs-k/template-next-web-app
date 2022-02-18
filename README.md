@@ -14,6 +14,7 @@ The following packages are included in addition to Next.js & dependencies:
 * [Prettier](https://www.npmjs.com/package/prettier) -  Prettier is an opinionated code formatter. 
 * [tailwindcss](https://www.npmjs.com/package/tailwindcss) -  A utility-first CSS framework for rapidly building custom user interfaces.
 * [next-auth](https://www.npmjs.com/package/next-auth) -  NextAuth.js is a complete open source authentication solution for Next.js applications.
+* [AWS CDK](https://www.npmjs.com/package/aws-cdk) - The AWS CDK Toolkit provides the cdk command-line interface that can be used to work with AWS CDK applications.
 
 ## Pre-requisites
 `npm v8.0.0` or higher. Get started [here](https://www.npmjs.com/).
@@ -47,6 +48,8 @@ See [`package.json`](package.json) for details.
 | `npm run e2e:headless:chrome` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly with Chrome. |
 | `npm run e2e:headless:firefox` | Uses [start-server-and-test](https://www.npmjs.com/package/start-server-and-test) headlessly with Firefox. |
 | `npm run all` | Runs `npm run format`, `npm run lint`, `npm run test`, and `npm run build` together for local testing. |
+| `npm run cdk` | Runs `npm run cdk`. |
+| `npm run cdk:build` | Runs `tsc --project tsconfigcdk.json`. |
 
 ## Available Actions
 | Name | Description |
