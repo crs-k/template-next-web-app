@@ -19,5 +19,6 @@
     "strictPropertyInitialization": false,
     "types": ["node"]
   },
-  "include": ["lib/**/*", "bin/**/*"]
+  "include": ["lib/**/*", "bin/**/*"],
+  "exclude": ["node_modules"]
 }
