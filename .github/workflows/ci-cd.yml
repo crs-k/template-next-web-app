@@ -174,12 +174,12 @@ jobs:
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL: http://dev.${{ secrets.NEXTAUTH_URL }}
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
       name: Development
-      url: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
+      url: http://dev.${{ secrets.NEXTAUTH_URL }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -205,12 +205,12 @@ jobs:
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL: http://stage.${{ secrets.NEXTAUTH_URL }}
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
     environment:
       name: Staging
-      url: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
+      url: http://stage.${{ secrets.NEXTAUTH_URL }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -241,7 +241,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Production
-      url: 'http://${{ secrets.NEXTAUTH_URL }}'
+      url: http://${{ secrets.NEXTAUTH_URL }}
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
