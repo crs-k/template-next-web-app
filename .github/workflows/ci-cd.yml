@@ -179,7 +179,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Development
-      url: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -210,7 +209,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Staging
-      url: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -241,7 +239,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: Production
-      url: 'http://${{ secrets.NEXTAUTH_URL }}'
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
