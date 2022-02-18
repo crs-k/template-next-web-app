@@ -1,0 +1,3 @@
+{
+    "app": "npx ts-node --project=tsconfigcdk.json dist/bin/index"
+}
