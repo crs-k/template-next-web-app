@@ -52,14 +52,17 @@ jobs:
     name: Test - Infrastructure
     runs-on: ubuntu-latest
     steps:
-      #- name: Checkout Repo
-      #  uses: actions/checkout@v2
+      - name: Checkout Repo
+        uses: actions/checkout@v2
 
-      #- name: Install Dependencies
-      #  run: npm ci
+      - name: Install Dependencies
+        run: npm ci
       
-      - name: Test Infrastructure
-        run: echo 'Pending'
+      - name: Build CDK
+        run: npm run build:cdk
+
+      - name: Nag CDK
+        run: npm run cdk synth
 
   Test-e2e-electron:
     name: Test - e2e - Electron
