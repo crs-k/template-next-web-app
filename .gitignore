@@ -41,3 +41,4 @@ yarn-error.log*
 #cdk
 cdk.context.json
 cdk.out
+dist

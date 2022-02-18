@@ -24,7 +24,7 @@
     "e2e:headless:chrome": "start-server-and-test start http://localhost:3000 cypress:headless:chrome",
     "e2e:headless:firefox": "start-server-and-test start http://localhost:3000 cypress:headless:firefox",
     "cdk": "cdk",
-    "cdk:build": "tsc",
+    "cdk:build": "tsc --project tsconfigcdk.json",
     "all": "npm run format && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
