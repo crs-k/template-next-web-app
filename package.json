@@ -46,7 +46,7 @@
     "@aws-cdk/aws-amplify-alpha": "2.10.0-alpha.0",
     "aws-cdk": "2.15.0",
     "cdk-nag": "2.8.0",
-    "aws-cdk-lib": "2.14.0",
+    "aws-cdk-lib": "2.15.0",
     "constructs": "10.0.76",
     "babel-plugin-istanbul": "6.1.1",
     "check-code-coverage": "1.10.0",
