@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "5.17.0",
     "@aws-cdk/aws-amplify-alpha": "2.10.0-alpha.0",
     "aws-cdk": "2.18.0",
-    "cdk-nag": "2.12.6",
+    "cdk-nag": "2.12.9",
     "aws-cdk-lib": "2.18.0",
     "constructs": "10.0.100",
     "babel-plugin-istanbul": "6.1.1",
