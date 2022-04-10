@@ -49,7 +49,7 @@ jobs:
         run: 'npm run test:ci'
 
       - name: Archive code coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: unit-coverage-report
           path: jest-coverage/lcov-report/
@@ -103,7 +103,7 @@ jobs:
         run: 'npm run nyc:coverage'
 
       - name: Archive code coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: e2e-electron-coverage-report
           path: cypress-coverage/lcov-report/
@@ -133,7 +133,7 @@ jobs:
         run: 'npm run nyc:coverage'
 
       - name: Archive code coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: e2e-chrome-coverage-report
           path: cypress-coverage/lcov-report/       
@@ -163,7 +163,7 @@ jobs:
         run: 'npm run nyc:coverage'
 
       - name: Archive code coverage results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: e2e-firefox-coverage-report
           path: cypress-coverage/lcov-report/               
