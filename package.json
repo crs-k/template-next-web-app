@@ -28,13 +28,14 @@
     "all": "npm run format && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
-    "next": "12.1.4",
+    "next": "^12.1.5",
     "next-auth": "4.3.1",
     "next-themes": "0.1.1",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },
   "devDependencies": {
+    "@aws-cdk/aws-amplify-alpha": "2.10.0-alpha.0",
     "@cypress/code-coverage": "3.9.12",
     "@tailwindcss/typography": "0.5.2",
     "@testing-library/jest-dom": "5.16.4",
@@ -43,26 +44,24 @@
     "@types/react": "18.0.5",
     "@typescript-eslint/eslint-plugin": "5.19.0",
     "@typescript-eslint/parser": "5.19.0",
-    "@aws-cdk/aws-amplify-alpha": "2.10.0-alpha.0",
+    "autoprefixer": "10.4.4",
     "aws-cdk": "2.20.0",
-    "cdk-nag": "2.12.25",
     "aws-cdk-lib": "2.20.0",
-    "constructs": "10.0.108",
     "babel-plugin-istanbul": "6.1.1",
+    "cdk-nag": "2.12.25",
     "check-code-coverage": "1.10.0",
+    "constructs": "10.0.108",
     "cypress": "9.5.4",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-testing-library": "5.2.1",
     "jest": "27.5.1",
-    "lodash": ">=4.17.21",
+    "postcss": "8.4.12",
     "prettier": "2.6.2",
     "start-server-and-test": "1.14.0",
     "tailwindcss": "3.0.23",
-    "typescript": "4.6.3",
     "ts-node": "10.7.0",
-    "autoprefixer": "10.4.4",
-    "postcss": "8.4.12"
+    "typescript": "4.6.3"
   }
 }
