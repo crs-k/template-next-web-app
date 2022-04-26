@@ -48,7 +48,7 @@
     "aws-cdk": "2.21.1",
     "aws-cdk-lib": "2.21.1",
     "babel-plugin-istanbul": "6.1.1",
-    "cdk-nag": "2.12.36",
+    "cdk-nag": "2.12.37",
     "check-code-coverage": "1.10.0",
     "constructs": "10.0.125",
     "cypress": "9.6.0",
