@@ -235,7 +235,7 @@ exports[`renders homepage unchanged 1`] = `
         >
           <em>
             next-auth@
-            4.3.1
+            4.3.3
           </em>
         </li>
       </ul>
