@@ -83,7 +83,7 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL_EXT: 'http://${{ secrets.NEXTAUTH_URL }}'
       INSTRUMENT_COVERAGE: true
     steps:
 
@@ -113,7 +113,7 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL_EXT: 'http://${{ secrets.NEXTAUTH_URL }}'
       INSTRUMENT_COVERAGE: true
     steps:
 
@@ -143,7 +143,7 @@ jobs:
     needs: [Test-Lint, Test-Unit, Test-Infrastructure]
     runs-on: ubuntu-latest
     env:
-      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL_EXT: 'http://${{ secrets.NEXTAUTH_URL }}'
       INSTRUMENT_COVERAGE: true
     steps:
 
@@ -174,7 +174,7 @@ jobs:
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'alpha'))
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL_EXT: 'http://dev.${{ secrets.NEXTAUTH_URL }}'
       aws_domain: 'dev.${{ secrets.NEXTAUTH_URL }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
@@ -205,7 +205,7 @@ jobs:
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL_EXT: 'http://stage.${{ secrets.NEXTAUTH_URL }}'
       aws_domain: 'stage.${{ secrets.NEXTAUTH_URL }}'
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
@@ -236,7 +236,7 @@ jobs:
     if: (github.event_name == 'release' && github.event.release.prerelease != true)
     needs: [Test-Lint, Test-Unit, Test-Infrastructure, Test-e2e-firefox, Test-e2e-electron, Test-e2e-chrome]
     env:
-      NEXTAUTH_URL: 'http://${{ secrets.NEXTAUTH_URL }}'
+      NEXTAUTH_URL_EXT: 'http://${{ secrets.NEXTAUTH_URL }}'
       aws_domain: ${{ secrets.NEXTAUTH_URL }}
       INSTRUMENT_COVERAGE: false
     runs-on: ubuntu-latest
