@@ -33,6 +33,9 @@ jobs:
       
       - name: Lint
         run: 'npm run format && npm run lint'
+      
+      - name: Trigger Amplify Build
+        run: curl -X POST -d {} "${{ secrets.DEV_DEPLOY_WEBHOOK }}" -H "Content-Type:application/json"
 
   Test-Unit:
     name: Test - Unit
@@ -230,6 +233,9 @@ jobs:
 
       - name: CDK Deploy
         run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$aws_domain --require-approval never'
+
+      - name: Trigger Amplify Build
+        run: curl -X POST -d {} "${{ secrets.DEV_DEPLOY_WEBHOOK }}" -H "Content-Type:application/json"
 
   deploy-to-production:
     name: Deploy to Production
