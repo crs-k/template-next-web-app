@@ -35,7 +35,7 @@ jobs:
         run: 'npm run format && npm run lint'
       
       - name: Trigger Amplify Build
-        run: curl -X POST -d {} "${{ secrets.DEV_DEPLOY_WEBHOOK }}" -H "Content-Type:application/json"
+        run: curl -X POST -d {} "${{ secrets.DEV_DEPLOY_WEBHOOK }}" -H "Content-Type:application/json" &> /dev/null
 
   Test-Unit:
     name: Test - Unit
