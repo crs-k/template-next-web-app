@@ -200,6 +200,9 @@ jobs:
       - name: CDK Deploy
         run: 'npm run cdk -- deploy -c aws_account=$aws_account -c aws_region=$aws_region -c aws_role=$aws_role -c github_owner=$github_owner -c github_repository=$github_repository -c aws_domain=$aws_domain --require-approval never'
 
+      - name: Trigger Amplify Build
+        run: curl -X POST -d {} "${{ secrets.DEV_DEPLOY_WEBHOOK }}" -H "Content-Type:application/json" &> /dev/null
+
   deploy-to-stage:
     name: Deploy to Staging
     if: (github.event.release.prerelease == true && contains(github.event.release.tag_name,'beta'))
