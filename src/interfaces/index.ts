@@ -4,7 +4,7 @@
 //
 // import { User } from 'path/to/interfaces';
 
-export type User = {
+export interface User {
     id: number
     name: string
   }
