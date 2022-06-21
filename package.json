@@ -43,7 +43,7 @@
     "@types/node": "17.0.44",
     "@types/react": "18.0.14",
     "@typescript-eslint/eslint-plugin": "5.29.0",
-    "@typescript-eslint/parser": "5.28.0",
+    "@typescript-eslint/parser": "5.29.0",
     "autoprefixer": "10.4.7",
     "aws-cdk": "2.28.1",
     "aws-cdk-lib": "2.28.1",
