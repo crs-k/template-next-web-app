@@ -28,7 +28,7 @@
     "all": "npm run format && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
-    "next": "^12.1.6",
+    "next": "^12.2.0",
     "next-auth": "4.3.4",
     "next-themes": "0.2.0",
     "react": "18.2.0",
