@@ -28,7 +28,7 @@
     "all": "npm run format && npm run lint && npm run test && npm run build"
   },
   "dependencies": {
-    "next": "^12.1.6",
+    "next": "^12.2.0",
     "next-auth": "4.3.4",
     "next-themes": "0.2.0",
     "react": "18.2.0",
@@ -48,7 +48,7 @@
     "aws-cdk": "2.29.1",
     "aws-cdk-lib": "2.29.1",
     "babel-plugin-istanbul": "6.1.1",
-    "cdk-nag": "2.14.45",
+    "cdk-nag": "2.14.47",
     "check-code-coverage": "1.10.0",
     "constructs": "10.1.42",
     "cypress": "9.7.0",
