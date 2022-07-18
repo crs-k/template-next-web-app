@@ -37,7 +37,7 @@
   "devDependencies": {
     "@aws-cdk/aws-amplify-alpha": "2.10.0-alpha.0",
     "@cypress/code-coverage": "3.10.0",
-    "@tailwindcss/typography": "0.5.2",
+    "@tailwindcss/typography": "0.5.4",
     "@testing-library/jest-dom": "5.16.4",
     "@testing-library/react": "13.3.0",
     "@types/node": "17.0.44",
