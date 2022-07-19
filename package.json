@@ -46,7 +46,7 @@
     "@typescript-eslint/parser": "5.30.7",
     "autoprefixer": "10.4.7",
     "aws-cdk": "2.33.0",
-    "aws-cdk-lib": "2.32.1",
+    "aws-cdk-lib": "2.33.0",
     "babel-plugin-istanbul": "6.1.1",
     "cdk-nag": "2.15.17",
     "check-code-coverage": "1.10.0",
