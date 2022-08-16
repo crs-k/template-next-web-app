@@ -50,7 +50,7 @@
     "babel-plugin-istanbul": "6.1.1",
     "cdk-nag": "2.15.41",
     "check-code-coverage": "1.10.0",
-    "constructs": "10.1.73",
+    "constructs": "10.1.77",
     "cypress": "10.5.0",
     "eslint": "8.22.0",
     "eslint-config-next": "12.2.5",
